@@ -1,4 +1,12 @@
 # SomethingAwesome-Rootkitten
+This rootkit hooks three main functions.
+Sys_call_table's execve syscall and getdents syscall
+as well as the tcp4_seq_show function *(this is not a syscall)*
+
+it is functional on kernel 4.15 i.e. ubuntu 18.06 and would not work on debian/other distros because
+syscalltable is not exported by default, and would require a recompilation of the kernel for 
+syscalltable to be available to be search for from kallsyms_get_name
+
 
 ## commands to run
 
